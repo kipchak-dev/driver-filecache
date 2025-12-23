@@ -1,0 +1,40 @@
+<?php
+
+namespace Mamluk\Kipchak\Driver\Filecache;
+
+use Mamluk\Kipchak\Interfaces;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\ContainerInterface;
+use Psr\Container\NotFoundExceptionInterface;
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
+use Mamluk\Kipchak\Driver\Config\Driver as Config;
+
+class Driver implements Interfaces\Driver
+{
+    protected static ContainerInterface $container;
+
+    public static function initialise(ContainerInterface $container): void
+    {
+        self::$container = $container;
+    }
+
+    public static function set(): void
+    {
+        self::$container->set('drivers.cache.file', function(ContainerInterface $c): FilesystemAdapter {
+            $config = Config::get('kipchak.api');
+            $namespace = $config['name'] ?? 'KipchakApiCache';
+
+            return new FilesystemAdapter($namespace, 3600);
+        });
+    }
+
+    /**
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
+     */
+    public static function get(?string $configKey = null): FilesystemAdapter
+    {
+        return  self::$container->get('drivers.cache.file');
+    }
+
+}
