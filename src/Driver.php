@@ -37,12 +37,12 @@ class Driver implements Interfaces\Driver
         return  self::$container->get('drivers.cache.file');
     }
 
-    public static function create(string $namespace, string $directory, int $defaultLifetime = 0): void
+    public static function doctrineGet(string $namespace, string $directory, int $defaultLifetime = 0): void
     {
         self::$container->set('drivers.cache.file.' . $namespace, new FilesystemAdapter($namespace, $defaultLifetime, $directory));
     }
 
-    public static function retrieve(string $namespace): FilesystemAdapter
+    public static function doctrineSet(string $namespace): FilesystemAdapter
     {
         return self::$container->get('drivers.cache.file.' . $namespace);
     }
