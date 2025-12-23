@@ -1,13 +1,13 @@
 <?php
 
-namespace Mamluk\Kipchak\Driver\Filecache;
+namespace Kipchak\Driver\Filecache;
 
-use Mamluk\Kipchak\Interfaces;
+use Kipchak\Core\Interfaces;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\ContainerInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
-use Mamluk\Kipchak\Driver\Config\Driver as Config;
+use Kipchak\Driver\Config\Driver as Config;
 
 class Driver implements Interfaces\Driver
 {

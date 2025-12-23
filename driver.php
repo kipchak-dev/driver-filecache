@@ -1,7 +1,7 @@
 <?php
 
 use Psr\Container\ContainerInterface;
-use Mamluk\Kipchak\Driver\Filecache\Driver;
+use Kipchak\Driver\Filecache\Driver;
 
 /**
  * @var $container ContainerInterface
