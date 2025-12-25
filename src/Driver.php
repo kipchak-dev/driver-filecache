@@ -13,7 +13,7 @@ class Driver implements Interfaces\Driver
 {
     protected static ContainerInterface $container;
 
-    public static function initialise(ContainerInterface $container): void
+    public static function initialise(ContainerInterface $container, ?string $configFileName = null): void
     {
         self::$container = $container;
         self::set();
@@ -35,7 +35,7 @@ class Driver implements Interfaces\Driver
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */
-    public static function get(?string $configKey = null, ?string $configFileName = null): FilesystemAdapter
+    public static function get(?string $configKey = null): FilesystemAdapter
     {
         return  self::$container->get('drivers.cache.file');
     }
