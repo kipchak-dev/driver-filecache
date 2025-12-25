@@ -30,10 +30,12 @@ class Driver implements Interfaces\Driver
     }
 
     /**
+     * @param string|null $configKey
+     * @param string|null $configFileName
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */
-    public static function get(?string $configKey = null): FilesystemAdapter
+    public static function get(?string $configKey = null, ?string $configFileName = null): FilesystemAdapter
     {
         return  self::$container->get('drivers.cache.file');
     }
