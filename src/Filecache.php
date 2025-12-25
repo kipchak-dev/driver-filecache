@@ -9,7 +9,7 @@ use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Kipchak\Driver\Config\Driver as Config;
 
-class Driver implements Interfaces\Driver
+class Filecache implements Interfaces\Driver
 {
     protected static ContainerInterface $container;
 
