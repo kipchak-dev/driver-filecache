@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6adbd5034bfb4312651b5dd2b5e8b6dc",
+    "content-hash": "26286e7b358c5b2e0b9e31d781426904",
     "packages": [
         {
             "name": "cuyz/valinor",
@@ -142,7 +142,7 @@
         },
         {
             "name": "kipchak/core",
-            "version": "2.x-dev",
+            "version": "2.0",
             "source": {
                 "type": "git",
                 "url": "https://1x.ax/mamluk/kipchak/core",
@@ -1912,9 +1912,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "kipchak/core": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {},
