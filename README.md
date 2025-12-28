@@ -18,7 +18,7 @@ Install it via composer: `composer require kipchak/driver-filecache`.
 
 ```php
 // Load the HTTP driver.
-$cache = \Mamluk\Kipchak\Driver\Filecache\Filecache::get()
+$cache = Kipchak\Driver\Filecache\Filecache::get()
 // Use the $cache client as you would the Symfony Cache Component.
 ```
 
